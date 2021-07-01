@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HiDev_Mobile</string>
+    <string name="title_home">Home</string>
+    <string name="title_webinar">Webinar</string>
+    <string name="title_loker">Loker</string>
+    <string name="daftar">DAFTAR</string>
+    <string name="content">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+</string>
+    <string name="deadline">Until, 24 Desember 2021</string>
+</resources>

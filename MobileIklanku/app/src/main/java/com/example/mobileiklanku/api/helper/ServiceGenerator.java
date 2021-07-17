@@ -6,24 +6,22 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
-    private static final String BASE_URL = "http://5f73be3ccdf2.ap.ngrok.io";
+//    private static final String BASE_URL = "http://192.168.0.105:8000"; // sesuaikan dengan uri kalian\
+    private static URLAPI urlapi =new URLAPI();
 
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
+                    .baseUrl(urlapi.getURI())
                     .addConverterFactory(GsonConverterFactory.create());
 
     private static Retrofit retrofit = builder.build();
 
-    private static HttpLoggingInterceptor logging =
-            new HttpLoggingInterceptor()
-                    .setLevel(HttpLoggingInterceptor.Level.BODY);
+    private static HttpLoggingInterceptor logging = new HttpLoggingInterceptor()
+            .setLevel(HttpLoggingInterceptor.Level.BODY);
 
-    private static OkHttpClient.Builder httpClient =
-            new OkHttpClient.Builder();
+    private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 
-    public static <S> S createService(
-            Class<S> serviceClass) {
+    public static <S> S createService(Class<S> serviceClass) {
         if (!httpClient.interceptors().contains(logging)) {
             httpClient.addInterceptor(logging);
             builder.client(httpClient.build());

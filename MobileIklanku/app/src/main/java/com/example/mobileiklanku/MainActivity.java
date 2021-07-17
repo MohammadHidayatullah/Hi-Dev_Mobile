@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.example.mobileiklanku.api.helper.ServiceGenerator;
 import com.example.mobileiklanku.api.models.LokerModels;

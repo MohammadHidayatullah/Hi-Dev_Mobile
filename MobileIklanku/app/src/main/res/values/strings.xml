@@ -2,8 +2,9 @@
     <string name="app_name">MobileIklanku</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_loker">LOWONGAN PEKERJAAN</string>
     <string name="title_webinar">WEBINAR</string>
+    <string name="title_webinar_detail">DETAIL WEBINAR</string>
+    <string name="title_loker">LOWONGAN PEKERJAAN</string>
     <string name="daftar">DAFTAR</string>
     <string name="content">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
 "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."

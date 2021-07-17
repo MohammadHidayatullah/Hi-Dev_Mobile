@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.mobileiklanku.api.helper.ServiceGenerator;
+import com.example.mobileiklanku.api.models.LokerModels;
 import com.example.mobileiklanku.api.models.WebinarModels;
 import com.example.mobileiklanku.api.services.ApiInterface;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNav = findViewById(R.id.bottom_nav);
         checkModelWebinar();
+        checkModelLoker();
 
         if (savedInstanceState==null){
             bottomNav.setItemSelected(R.id.home, true);
@@ -80,6 +82,22 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<WebinarModels>> call, Throwable t) {
+                Log.e("Error",t.getMessage());
+            }
+        });
+    }
+
+    private void checkModelLoker(){
+        ApiInterface service = ServiceGenerator.createService(ApiInterface.class);
+        Call<List<LokerModels>> call = service.getLoker();
+        call.enqueue(new Callback<List<LokerModels>>() {
+            @Override
+            public void onResponse(Call<List<LokerModels>> call, Response<List<LokerModels>> response) {
+                System.out.println("response: "+response.body().get(0).getDeskripsi());
+            }
+
+            @Override
+            public void onFailure(Call<List<LokerModels>> call, Throwable t) {
                 Log.e("Error",t.getMessage());
             }
         });

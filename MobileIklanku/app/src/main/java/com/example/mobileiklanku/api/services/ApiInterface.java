@@ -12,5 +12,5 @@ public interface ApiInterface {
     @GET("/api/webinar")
     Call<List<WebinarModels>> getWebinar();
     @GET("/api/loker")
-    Call<LokerModels> getLoker();
+    Call<List<LokerModels>> getLoker();
 }

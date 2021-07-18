@@ -1,5 +1,7 @@
 package com.example.mobileiklanku;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.example.mobileiklanku.api.helper.URLAPI;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +19,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+    // Initialization
+    private URLAPI urlapi;
+    Button registWebinarBtn, registLokerBtn;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,12 +61,36 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        urlapi = new URLAPI();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        registWebinarBtn = view.findViewById(R.id.home_daftar_webinar_btn);
+        registLokerBtn = view.findViewById(R.id.home_daftar_loker_btn);
+        setupButton();
+        return view;
+    }
+
+    public void setupButton() {
+            registLokerBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(urlapi.getURI()+"/home")); // SET URL DATA FOR VISIT WHEN BUTTON REGIST LOKER CLICKED
+                    startActivity(i);
+                }
+            });
+            registWebinarBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(urlapi.getURI()+"/home")); // SET URL DATA FOR VISIT WHEN BUTTON REGIST WEBMINAR CLICKED
+                    startActivity(i);
+                }
+            });
     }
 }

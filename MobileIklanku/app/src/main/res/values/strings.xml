@@ -7,7 +7,13 @@
     <string name="title_loker">LOWONGAN PEKERJAAN</string>
     <string name="daftar">DAFTAR</string>
     <string name="content">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
-</string>
+    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+    </string>
+    <string name="desc_home_webinar">
+        Pasang iklan webinar Anda agar terhubung dengan leads berpotensi untuk event Anda. Dapatkan juga sarana Branding dan promosi produk yang tertarget dengan Iklanku.
+    </string>
+    <string name="desc_home_loker">
+        Pasang iklan lowongan pekerjaan dan temukan pencari kerja yang potensial. Dapatkan kemudahan dan keuntungan di Iklanku.
+    </string>
     <string name="deadline">Until, 24 Desember 2021</string>
 </resources>

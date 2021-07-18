@@ -1,7 +1,5 @@
 package com.example.mobileiklanku;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,11 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileiklanku.api.helper.ServiceGenerator;
 import com.example.mobileiklanku.api.helper.URLAPI;
-import com.example.mobileiklanku.api.models.WebinarModels;
+import com.example.mobileiklanku.api.models.LokerModels;
 import com.example.mobileiklanku.api.services.ApiInterface;
 import com.google.android.material.snackbar.Snackbar;
 import com.pnikosis.materialishprogress.ProgressWheel;
@@ -26,37 +25,35 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.example.mobileiklanku.WebinarFragment.ID_WEBINAR;
+import static com.example.mobileiklanku.LokerFragment.ID_LOKER;
 
-public class DetailWebminarActivity extends AppCompatActivity {
+public class DetailLokerActivity extends AppCompatActivity {
 
-    // initialization parameters
-    private static final String TAG = DetailWebminarActivity.class.getCanonicalName();
+    // paramaters
+    private static final String TAG = DetailLokerActivity.class.getCanonicalName();
     private ApiInterface apiInterface = ServiceGenerator.createService(ApiInterface.class);
-    private int id_webinar;
-    private URLAPI urlapi =new URLAPI();
-    TextView titleDW, descDW, dateDW;
-    ImageView imageDW;
+    private int id_loker;
+    private URLAPI urlapi = new URLAPI();
+    TextView titleDLK, descDLK, dateDLK;
+    ImageView imageDLK;
     ProgressWheel progressWheel;
-    Button daftarBTN, backBTN;
     String link;
+    Button daftarBTN, backBTN;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_webminar);
-        titleDW = findViewById(R.id.titleWBDTTV);
-        descDW = findViewById(R.id.descWBDTTV);
-        dateDW = findViewById(R.id.dateWBDTTV);
-        imageDW = findViewById(R.id.imageDW);
+        setContentView(R.layout.activity_detail_loker);
+        titleDLK = findViewById(R.id.titleLKDTTV);
+        descDLK = findViewById(R.id.descLKDTTV);
+        dateDLK = findViewById(R.id.dateLKDTTV);
+        imageDLK = findViewById(R.id.imageDLK);
         progressWheel = findViewById(R.id.progress_wheel);
         menuVisibility(View.GONE);
         Bundle extras = getIntent().getExtras();
         if (extras != null){
-            id_webinar = extras.getInt(ID_WEBINAR);
+            id_loker = extras.getInt(ID_LOKER);
         }
-
-        daftarBTN = findViewById(R.id.daftarDWBTN);
+        daftarBTN = findViewById(R.id.daftarDLKTN);
         daftarBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,55 +64,56 @@ public class DetailWebminarActivity extends AppCompatActivity {
             }
         });
 
-        backBTN = findViewById(R.id.backDWBTN);
+        backBTN = findViewById(R.id.backDLKTN);
         backBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DetailWebminarActivity.this, MainActivity.class));
+                startActivity(new Intent(DetailLokerActivity.this, MainActivity.class));
                 finish();
             }
         });
-        getDetail(id_webinar);
+        getDetail(id_loker);
     }
 
     public void menuVisibility(int a) {
-        titleDW.setVisibility(a);
-        descDW.setVisibility(a);
-        dateDW.setVisibility(a);
+        titleDLK.setVisibility(a);
+        descDLK.setVisibility(a);
+        dateDLK.setVisibility(a);
     }
 
-    public void getDetail(Integer id_webinar){
-        apiInterface.getWebinarByID(id_webinar).enqueue(new Callback<List<WebinarModels>>() {
+    public void getDetail(Integer id_loker){
+        apiInterface.getLokerByID(id_loker).enqueue(new Callback<List<LokerModels>>() {
             @Override
-            public void onResponse(Call<List<WebinarModels>> call, Response<List<WebinarModels>> response) {
-                if (response.isSuccessful()) {
+            public void onResponse(Call<List<LokerModels>> call, Response<List<LokerModels>> response) {
+                if (response.isSuccessful()){
                     progressWheel.setVisibility(View.GONE);
                     menuVisibility(View.VISIBLE);
                     if (!response.body().isEmpty()){
-                            WebinarModels webinarRes = response.body().get(0);
-                            titleDW.setText(webinarRes.getJudul_webinar());
-                            descDW.setText(webinarRes.getDeskripsi());
-                            dateDW.setText(webinarRes.getDeadline());
-                            link = webinarRes.getLink();
-                            Picasso.get().load(urlapi.getURI()+"/images/webinar/" + webinarRes.getPamflet_webinar())
+                        LokerModels lokerRes = response.body().get(0);
+                        titleDLK.setText(lokerRes.getJudul_loker());
+                        descDLK.setText(lokerRes.getDeskripsi());
+                        dateDLK.setText(lokerRes.getDeadline());
+                        link = lokerRes.getLink();
+                        Picasso.get().load(urlapi.getURI()+"/images/loker/" + lokerRes.getPamflet_loker())
                                 .centerCrop()
                                 .resize(500, 500)
-                                .into(imageDW);
-                    }else{
-                        showSnackBar("Response empty");
+                                .into(imageDLK);
+                    }else {
+                        showSnackBar("Data Kosong");
                     }
-                }else{
+                }else {
                     showSnackBar("Error Request Failed");
                 }
             }
 
             @Override
-            public void onFailure(Call<List<WebinarModels>> call, Throwable t) {
+            public void onFailure(Call<List<LokerModels>> call, Throwable t) {
                 Log.i(TAG, t.getMessage());
                 showSnackBar(t.getMessage());
             }
         });
     }
+
     private void showSnackBar(String msg){
         Snackbar.make(getWindow().getDecorView().getRootView(), msg, Snackbar.LENGTH_LONG).show();
     }

@@ -4,6 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_webinar">WEBINAR</string>
     <string name="title_webinar_detail">DETAIL WEBINAR</string>
+    <string name="title_loker_detail">DETAIL LOWONGAN PERKERJAAN</string>
     <string name="title_loker">LOWONGAN PEKERJAAN</string>
     <string name="daftar">DAFTAR</string>
     <string name="content">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."

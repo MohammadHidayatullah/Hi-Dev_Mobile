@@ -7,12 +7,12 @@ public class LokerModels {
     @SerializedName("id")
     @Expose
     private int id;
-    @SerializedName("pamflet_webinar")
+    @SerializedName("pamflet_loker")
     @Expose
-    private String pamflet_webinar;
-    @SerializedName("judul_webinar")
+    private String pamflet_loker;
+    @SerializedName("judul_loker")
     @Expose
-    private String judul_webinar;
+    private String judul_loker;
     @SerializedName("deskripsi")
     @Expose
     private String deskripsi;
@@ -34,20 +34,20 @@ public class LokerModels {
         this.id = id;
     }
 
-    public String getPamflet_webinar() {
-        return pamflet_webinar;
+    public String getPamflet_loker() {
+        return pamflet_loker;
     }
 
-    public void setPamflet_webinar(String pamflet_webinar) {
-        this.pamflet_webinar = pamflet_webinar;
+    public void setPamflet_loker(String pamflet_loker) {
+        this.pamflet_loker = pamflet_loker;
     }
 
-    public String getJudul_webinar() {
-        return judul_webinar;
+    public String getJudul_loker() {
+        return judul_loker;
     }
 
-    public void setJudul_webinar(String judul_webinar) {
-        this.judul_webinar = judul_webinar;
+    public void setJudul_loker(String judul_loker) {
+        this.judul_loker = judul_loker;
     }
 
     public String getDeskripsi() {

@@ -6,7 +6,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
-//    private static final String BASE_URL = "http://192.168.0.105:8000"; // sesuaikan dengan uri kalian\
+//    Untuk ganti URLAPI ada di package api/helper/URLAPI
     private static URLAPI urlapi =new URLAPI();
 
     private static Retrofit.Builder builder =

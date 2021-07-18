@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNav = findViewById(R.id.bottom_nav);
-        checkModelWebinar();
-        checkModelLoker();
+//        checkModelWebinar();
+//        checkModelLoker();
 
         if (savedInstanceState==null){
             bottomNav.setItemSelected(R.id.home, true);
@@ -70,35 +70,35 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    private void checkModelWebinar(){
-        ApiInterface service = ServiceGenerator.createService(ApiInterface.class);
-        Call<List<WebinarModels>> call = service.getWebinar();
-        call.enqueue(new Callback<List<WebinarModels>>() {
-            @Override
-            public void onResponse(Call<List<WebinarModels>> call, Response<List<WebinarModels>> response) {
-                System.out.println("response: "+response.body().get(0).getDeskripsi());
-            }
-
-            @Override
-            public void onFailure(Call<List<WebinarModels>> call, Throwable t) {
-                Log.e("Error",t.getMessage());
-            }
-        });
-    }
-
-    private void checkModelLoker(){
-        ApiInterface service = ServiceGenerator.createService(ApiInterface.class);
-        Call<List<LokerModels>> call = service.getLoker();
-        call.enqueue(new Callback<List<LokerModels>>() {
-            @Override
-            public void onResponse(Call<List<LokerModels>> call, Response<List<LokerModels>> response) {
-                System.out.println("response: "+response.body().get(0).getDeskripsi());
-            }
-
-            @Override
-            public void onFailure(Call<List<LokerModels>> call, Throwable t) {
-                Log.e("Error",t.getMessage());
-            }
-        });
-    }
+//    private void checkModelWebinar(){
+//        ApiInterface service = ServiceGenerator.createService(ApiInterface.class);
+//        Call<List<WebinarModels>> call = service.getWebinar();
+//        call.enqueue(new Callback<List<WebinarModels>>() {
+//            @Override
+//            public void onResponse(Call<List<WebinarModels>> call, Response<List<WebinarModels>> response) {
+//                System.out.println("response: "+response.body().get(0).getDeskripsi());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<WebinarModels>> call, Throwable t) {
+//                Log.e("Error",t.getMessage());
+//            }
+//        });
+//    }
+//
+//    private void checkModelLoker(){
+//        ApiInterface service = ServiceGenerator.createService(ApiInterface.class);
+//        Call<List<LokerModels>> call = service.getLoker();
+//        call.enqueue(new Callback<List<LokerModels>>() {
+//            @Override
+//            public void onResponse(Call<List<LokerModels>> call, Response<List<LokerModels>> response) {
+//                System.out.println("response: "+response.body().get(0).getDeskripsi());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<LokerModels>> call, Throwable t) {
+//                Log.e("Error",t.getMessage());
+//            }
+//        });
+//    }
 }

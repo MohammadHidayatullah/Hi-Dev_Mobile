@@ -16,4 +16,6 @@ public interface ApiInterface {
     Call<List<WebinarModels>> getWebinarByID(@Path("id_webinar") int id_webinar);
     @GET("/api/loker")
     Call<List<LokerModels>> getLoker();
+    @GET("/api/loker/{id_loker}")
+    Call<List<LokerModels>> getLokerByID(@Path("id_loker") int id_loker);
 }

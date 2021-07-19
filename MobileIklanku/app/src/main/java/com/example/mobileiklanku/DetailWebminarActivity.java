@@ -62,7 +62,7 @@ public class DetailWebminarActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String url = link;
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("http://"+url));
+                i.setData(Uri.parse(url));
                 startActivity(i);
             }
         });
@@ -71,7 +71,6 @@ public class DetailWebminarActivity extends AppCompatActivity {
         backBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DetailWebminarActivity.this, MainActivity.class));
                 finish();
             }
         });

@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.mobileiklanku.api.helper.ServiceGenerator;
 import com.example.mobileiklanku.api.helper.URLAPI;
@@ -59,7 +61,7 @@ public class DetailLokerActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String url = link;
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("http://"+url));
+                i.setData(Uri.parse(url));
                 startActivity(i);
             }
         });
@@ -68,8 +70,7 @@ public class DetailLokerActivity extends AppCompatActivity {
         backBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DetailLokerActivity.this, MainActivity.class));
-                finish();
+               finish();
             }
         });
         getDetail(id_loker);

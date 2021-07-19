@@ -6,11 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="3"
     tools:context=".DetailWebminarActivity">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_weight="1"
         android:gravity="center">
         <TextView
             android:layout_width="wrap_content"
@@ -23,11 +25,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="2"
         android:orientation="vertical">
         <ImageView
             android:id="@+id/imageDW"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:layout_alignParentTop="true"
             android:scaleType="centerCrop"
             />
@@ -82,6 +85,8 @@
                     android:id="@+id/scrollv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:isScrollContainer="true"
+                    android:layout_above="@id/wrapperButton"
                     android:layout_below="@id/line">
                     <TextView
                         android:id="@+id/descWBDTTV"
@@ -93,6 +98,7 @@
                         android:textSize="13dp"/>
                 </ScrollView>
             <LinearLayout
+                android:id="@+id/wrapperButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center|bottom"

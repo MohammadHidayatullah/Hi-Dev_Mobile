@@ -6,11 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="3"
     tools:context=".DetailLokerActivity">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_weight="1"
         android:gravity="center">
         <TextView
             android:layout_width="wrap_content"
@@ -23,11 +25,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="2">
         <ImageView
             android:id="@+id/imageDLK"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:layout_alignParentTop="true"
             android:scaleType="centerCrop"
             />
@@ -77,12 +80,14 @@
                     android:layout_height="1dp"
                     android:layout_marginVertical="10dp"
                     android:background="@android:color/white"
-                    android:layout_below="@id/dateLKDTTV"/>
+                    android:layout_below="@id/dateLKDTTV"
+                    />
                 <ScrollView
                     android:id="@+id/scrollv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@id/line">
+                    android:layout_below="@id/line"
+                    android:layout_above="@id/wrapperButton">
                     <TextView
                         android:id="@+id/descLKDTTV"
                         android:layout_width="match_parent"
@@ -93,6 +98,7 @@
                         android:textSize="13dp"/>
                 </ScrollView>
             <LinearLayout
+                android:id="@+id/wrapperButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center|bottom"

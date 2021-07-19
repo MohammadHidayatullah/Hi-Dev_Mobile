@@ -30,7 +30,7 @@
         <ImageView
             android:id="@+id/imageDLK"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             android:layout_alignParentTop="true"
             android:scaleType="centerCrop"
             />
@@ -39,8 +39,6 @@
             android:id="@+id/wrapperDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="30dp"
-            android:layout_marginTop="-20dp"
             android:background="@drawable/bg_detail"
             android:layout_alignParentBottom="true"
             android:layout_below="@+id/imageDLK"
@@ -56,46 +54,53 @@
                 app:matProg_barColor="#F44336"
                 app:matProg_progressIndeterminate="true" />
 
-                <TextView
-                android:id="@+id/titleLKDTTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                />
-                <TextView
-                    android:id="@+id/dateLKDTTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1 Januari 2021"
-                    android:textColor="@color/white"
-                    android:textSize="15dp"
-                    android:layout_below="@id/titleLKDTTV"
-                    />
-                <View
-                    android:id="@+id/line"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginVertical="10dp"
-                    android:background="@android:color/white"
-                    android:layout_below="@id/dateLKDTTV"
-                    />
+
                 <ScrollView
                     android:id="@+id/scrollv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@id/line"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="25dp"
                     android:layout_above="@id/wrapperButton">
-                    <TextView
-                        android:id="@+id/descLKDTTV"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Title"
-                        android:justificationMode="inter_word"
-                        android:textColor="@color/white"
-                        android:textSize="13dp"/>
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/titleLKDTTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:id="@+id/dateLKDTTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1 Januari 2021"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:layout_below="@id/titleLKDTTV"
+                            />
+                        <View
+                            android:id="@+id/line"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="10dp"
+                            android:background="@android:color/white"
+                            android:layout_below="@id/dateLKDTTV"
+                            />
+                        <TextView
+                            android:id="@+id/descLKDTTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Title"
+                            android:justificationMode="inter_word"
+                            android:textColor="@color/white"
+                            android:textSize="13dp"/>
+                    </LinearLayout>
                 </ScrollView>
             <LinearLayout
                 android:id="@+id/wrapperButton"
@@ -103,6 +108,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center|bottom"
                 android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
                 android:layout_alignParentBottom="true">
                 <Button
                     android:id="@+id/backDLKTN"

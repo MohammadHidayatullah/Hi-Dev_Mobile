@@ -80,7 +80,7 @@ public class HomeFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse(urlapi.getURI()+"/home")); // SET URL DATA FOR VISIT WHEN BUTTON REGIST LOKER CLICKED
+                    i.setData(Uri.parse(urlapi.getURI()+"home")); // SET URL DATA FOR VISIT WHEN BUTTON REGIST LOKER CLICKED
                     startActivity(i);
                 }
             });
@@ -88,7 +88,7 @@ public class HomeFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse(urlapi.getURI()+"/home")); // SET URL DATA FOR VISIT WHEN BUTTON REGIST WEBMINAR CLICKED
+                    i.setData(Uri.parse(urlapi.getURI()+"home")); // SET URL DATA FOR VISIT WHEN BUTTON REGIST WEBMINAR CLICKED
                     startActivity(i);
                 }
             });

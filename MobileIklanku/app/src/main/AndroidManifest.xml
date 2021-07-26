@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileIklanku"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DetailWebminarActivity"></activity>
-        <activity android:name=".DetailLokerActivity"></activity>
+        <activity android:name=".IklankuWebView"></activity>
+        <activity android:name=".DetailWebminarActivity" />
+        <activity android:name=".DetailLokerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
